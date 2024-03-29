@@ -4,38 +4,38 @@ import { Auth0Feature } from "./auth0-feature";
 export const Auth0Features = () => {
   const featuresList = [
     {
-      title: "Identity Providers",
+      title: "クイックスタートガイド",
       description:
-        "Auth0 supports social providers such as Google, Facebook, and Twitter, along with Enterprise providers such as Microsoft Office 365, Google Apps, and Azure. You can also use any OAuth 2.0 Authorization Server.",
-      resourceUrl: "https://auth0.com/docs/connections",
+        "このクイックスタートガイドは、開発者がNode.jsアプリケーションを素早くセットアップし、OIDCクライアントライブラリを使用してUpbond Login 3.0と統合するのに役立ちます。基本的なOIDC認証フローを実装するためにこれらの手順に従ってください。",
+      resourceUrl: "https://upbondocs.gitbook.io/wallet/login-30gaido/quick-start-guide",
       icon: "https://cdn.auth0.com/blog/hello-auth0/identity-providers-logo.svg",
     },
     {
-      title: "Multi-Factor Authentication",
+      title: "Login3.0",
       description:
-        "You can require your users to provide more than one piece of identifying information when logging in. MFA delivers one-time codes to your users via SMS, voice, email, WebAuthn, and push notifications.",
-      resourceUrl: "https://auth0.com/docs/multifactor-authentication",
+        "UPBOND Login 3.0と呼ばれる分散型のアイデンティティおよびウォレットサービスと外部のOIDCフロントエンド（FE）クライアントの統合に関する概要を提供しています。この統合の目的は、UPBONDのアイデンティティプロバイダ（IdP）を活用してユーザーを認証し、彼らにウォレットアドレスへの安全で効率的なアクセスを提供することです。",
+      resourceUrl: "https://upbondocs.gitbook.io/wallet/nohe/login-3.0",
       icon: "https://cdn.auth0.com/blog/hello-auth0/mfa-logo.svg",
     },
     {
-      title: "Attack Protection",
+      title: "UPBOND WALLET",
       description:
-        "Auth0 can detect attacks and stop malicious attempts to access your application such as blocking traffic from certain IPs and displaying CAPTCHA. Auth0 supports the principle of layered protection in security that uses a variety of signals to detect and mitigate attacks.",
-      resourceUrl: "https://auth0.com/docs/attack-protection",
-      icon: "https://cdn.auth0.com/blog/hello-auth0/advanced-protection-logo.svg",
+        "Upbondウォレットは、ユーザーがさまざまな暗号通貨を保存、送信、および受信できる分散型の暗号通貨ウォレットです。",
+      resourceUrl: "https://upbondocs.gitbook.io/wallet/services/upbond-wallet",
+      icon: "https://cdn.auth0.com/blog/hello-auth0/private-cloud-logo.svg",
     },
     {
-      title: "Serverless Extensibility",
+      title: "セキュリティ",
       description:
-        "Actions are functions that allow you to customize the behavior of Auth0. Each action is bound to a specific triggering event on the Auth0 platform. Auth0 invokes the custom code of these Actions when the corresponding triggering event is produced at runtime.",
-      resourceUrl: "https://auth0.com/docs/actions",
-      icon: "https://cdn.auth0.com/blog/hello-auth0/private-cloud-logo.svg",
+      "IAMポリシーを使用して、最小権限のアクセスを確保しています。これにより、ユーザーやシステムはそれぞれの特定の役割に必要なリソースにのみアクセスできます。",
+      resourceUrl: "https://upbondocs.gitbook.io/wallet/security/security-protocols-and-measures",
+      icon: "https://cdn.auth0.com/blog/hello-auth0/advanced-protection-logo.svg",
     },
   ];
 
   return (
     <div className="auth0-features">
-      <h2 className="auth0-features__title">Explore Auth0 Features</h2>
+      <h2 className="auth0-features__title">サービスの特徴</h2>
       <div className="auth0-features__grid">
         {featuresList.map((feature) => (
           <Auth0Feature

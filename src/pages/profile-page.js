@@ -10,29 +10,24 @@ export const ProfilePage = () => {
     return null;
   }
 
+  console.log(user);
   return (
     <PageLayout>
       <div className="content-layout">
         <h1 id="page-title" className="content__title">
-          Profile Page
+         マイページ
         </h1>
         <div className="content__body">
           <p id="page-description">
-            <span>
-              You can use the <strong>ID Token</strong> to get the profile
-              information of an authenticated user.
-            </span>
-            <span>
-              <strong>Only authenticated users can access this page.</strong>
-            </span>
+          <span>
+        <strong>ID トークン</strong> を使用して、認証されたユーザーのプロファイル情報を取得できます。
+        </span>
+        <span>
+          <strong>認証されたユーザーのみがこのページにアクセスできます。</strong>
+        </span>
           </p>
           <div className="profile-grid">
             <div className="profile__header">
-              <img
-                src={user.picture}
-                alt="Profile"
-                className="profile__avatar"
-              />
               <div className="profile__headline">
                 <h2 className="profile__title">{user.name}</h2>
                 <span className="profile__description">{user.email}</span>

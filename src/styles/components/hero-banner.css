@@ -5,7 +5,7 @@
 
   width: 100%;
 
-  background: var(--yellow-mandarine-gradient);
+  background: var(--white);
 
   color: var(--black);
 
@@ -15,35 +15,13 @@
   padding: 3.2rem 6.4rem;
 }
 
-.hero-banner--yellow-mandarine {
-  background: var(--yellow-mandarine-gradient);
-}
-.hero-banner--pink-yellow {
-  background: var(--pink-yellow-gradient);
-}
 
-.hero-banner--blue-aqua {
-  background: var(--blue-aqua-gradient);
-}
-
-.hero-banner--aqua-emerald {
-  background: var(--aqua-emerald-gradient);
-}
-
-.hero-banner--emerald-yellow {
-  background: var(--emerald-yellow-gradient);
-}
 
 .hero-banner__logo {
   display: flex;
   justify-content: center;
   align-items: center;
-
-  background-color: var(--white);
   border-radius: 50%;
-
-  box-shadow: 0 2px 4px rgb(0 0 0 / 12%);
-
   /* responsive */
 
   width: 12.8rem;
@@ -72,7 +50,6 @@
 
 .hero-banner__description {
   max-width: 58rem;
-
   text-align: center;
 
   /* responsive */
