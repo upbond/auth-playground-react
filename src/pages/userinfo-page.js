@@ -60,6 +60,12 @@ export const UserinfoPage = () => {
               Accept: "application/json",
               Authorization: `Bearer ${tkn}`,
             },
+            // add extra params here
+            data: {
+              age: '23',
+              gender: 'male',
+              address: 'tokyo'
+            }
           });
           // GET userinfo detail from user info API
           const userInfoResp = await axios.get(userinfo_url, {
