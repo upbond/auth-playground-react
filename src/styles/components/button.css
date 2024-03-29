@@ -72,8 +72,8 @@
   min-width: 8.4rem;
 
   border: 0.1rem solid var(--indigo);
-  color: var(--white);
-  background: var(--indigo);
+  color: var(--black);
+  background: var(--white);
   width: 50%;
   font-size: 1.6rem;
 

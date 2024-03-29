@@ -6,21 +6,20 @@ export const HeroBanner = () => {
   return (
     <div className="hero-banner hero-banner--pink-yellow">
       <div className="hero-banner__logo">
-        <img className="hero-banner__image" src={logo} alt="React logo" />
+      <img class="mb-3 app-logo" src="https://da7udebijaype.cloudfront.net/uploads/startups/logos/c915d3a2-faa5-47c1-952c-45432b0ef32f.png?=1661886060" alt="upbondlogo" width="120" />
       </div>
-      <h1 className="hero-banner__headline">Hello, React World!</h1>
-      <p className="hero-banner__description">
-        This is a sample application that demonstrates the authentication flow
-        for React apps using <strong>Auth0</strong>.
-      </p>
+      <h1 className="hero-banner__headline">UPBOND LOGIN3.0</h1>
+      <p class="hero-banner__description">
+      UpbondのLogin 3.0 SDKを使用した認証フローを示すサンプルアプリケーションです。
+    </p>
       <a
         id="code-sample-link"
         target="_blank"
         rel="noopener noreferrer"
-        href="https://developer.auth0.com/resources/code-samples/spa/react/basic-authentication"
+        href="https://upbondocs.gitbook.io/wallet/"
         className="button button--secondary"
       >
-        Check out the React code sample →
+        ドキュメントを確認する →
       </a>
     </div>
   );

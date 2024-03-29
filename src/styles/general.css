@@ -19,9 +19,8 @@ body {
 }
 
 body {
-  background-color: var(--black);
+  background-color: #F5F5F5;
 
-  color: var(--white);
   font-family: var(--font-primary);
 
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
