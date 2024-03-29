@@ -35,6 +35,16 @@ export const UserinfoPage = () => {
         console.log(response.data, account_id)
 
         if (userinfo_url) {
+          // post user info
+          await axios.request({
+            url: userinfo_url,
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              Accept: 'application/json',
+              Authorization: `Bearer ${tkn}`,
+            },
+          });
           // GET userinfo detail from user info API
           const userInfoResp = await axios.get(userinfo_url, {
             headers: {
