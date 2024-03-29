@@ -8,10 +8,8 @@ export const ProfilePage = () => {
 
   if (!user) {
     return null;
-    console.log(user, "user not found");
   }
 
-  console.log(user);
   return (
     <PageLayout>
       <div className="content-layout">
