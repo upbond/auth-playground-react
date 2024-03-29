@@ -3,13 +3,10 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import { PageLoader } from "./components/page-loader";
 import { AuthenticationGuard } from "./components/authentication-guard";
-import { AdminPage } from "./pages/admin-page";
 import { CallbackPage } from "./pages/callback-page";
 import { HomePage } from "./pages/home-page";
 import { NotFoundPage } from "./pages/not-found-page";
 import { ProfilePage } from "./pages/profile-page";
-import { ProtectedPage } from "./pages/protected-page";
-import { PublicPage } from "./pages/public-page";
 import { UserinfoPage } from "./pages/userinfo-page";
 
 export const App = () => {
@@ -29,14 +26,6 @@ export const App = () => {
       <Route
         path="/profile"
         element={<AuthenticationGuard component={ProfilePage} />}
-      />
-      <Route
-        path="/protected"
-        element={<AuthenticationGuard component={ProtectedPage} />}
-      />
-      <Route
-        path="/admin"
-        element={<AuthenticationGuard component={AdminPage} />}
       />
       <Route
         path="/userinfo"
