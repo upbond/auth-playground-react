@@ -10,6 +10,7 @@ export const ProfilePage = () => {
     return null;
   }
 
+  console.log(user);
   return (
     <PageLayout>
       <div className="content-layout">
@@ -27,11 +28,6 @@ export const ProfilePage = () => {
           </p>
           <div className="profile-grid">
             <div className="profile__header">
-              <img
-                src={user.picture}
-                alt="Profile"
-                className="profile__avatar"
-              />
               <div className="profile__headline">
                 <h2 className="profile__title">{user.name}</h2>
                 <span className="profile__description">{user.email}</span>

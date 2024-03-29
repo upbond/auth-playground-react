@@ -10,7 +10,6 @@
 
   z-index: 300;
 
-  background-color: var(--black);
 }
 
 .mobile-nav-bar {
@@ -57,7 +56,6 @@
   position: fixed;
   left: 0;
   top: 6.4rem;
-  background-color: var(--black);
 
   z-index: 300;
 }
@@ -87,10 +85,10 @@
   line-height: 16px;
 
   padding: 3.2rem 2.4rem;
-  background-color: var(--black);
+  background-color: #425BA8;
   color: var(--white);
   width: 100%;
-  box-shadow: rgb(90 95 102) 0-1.5px 0 inset;
+  box-shadow: rgb(255, 255, 255) 0-1.5px 0 inset;
 }
 
 .mobile-nav-bar__tab:last-child {
@@ -100,7 +98,7 @@
 .mobile-nav-bar__tab--active {
   text-decoration-line: underline;
   text-decoration-style: solid;
-  text-decoration-color: var(--indigo);
+  text-decoration-color: var(--white);
 
   /* responsive */
 
@@ -120,7 +118,7 @@
   display: flex;
   justify-content: center;
   padding: 3.2rem;
-  background-color: var(--black);
+  background-color: #425BA8;
 }
 
 @media only screen and (max-width: 640px) and (hover: none) {
