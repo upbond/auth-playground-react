@@ -17,8 +17,10 @@ export const UserinfoPage = () => {
         process.env.REACT_APP_LOGIN30_DOMAIN ||
         "https://auth-wallet.dev.upbond.io";
 
+      let userinfo_url;
+      let tkn;
       try {
-        const tkn = await getAccessTokenSilently();
+        tkn = await getAccessTokenSilently();
         setToken(tkn);
 
         // GET user info endpoint
@@ -31,17 +33,31 @@ export const UserinfoPage = () => {
             },
           }
         );
-        const userinfo_url = response.data.userinfo_endpoint;
-        console.log(response.data, account_id)
+        userinfo_url = response.data.userinfo_endpoint;
 
         if (userinfo_url) {
+          // GET userinfo detail from user info API
+          const userInfoResp = await axios.get(userinfo_url, {
+            headers: {
+              Authorization: `Bearer ${tkn}`,
+            },
+          });
+          const user = userInfoResp?.data?.data;
+          if (!user) {
+            throw new Error("User not Found");
+          }
+          setUser(user);
+        }
+      } catch (error) {
+        console.error("Error fetching data:", error.response.data.error);
+        if (error?.response?.data?.error === "Not found") {
           // post user info
           await axios.request({
             url: userinfo_url,
-            method: 'POST',
+            method: "POST",
             headers: {
-              'Content-Type': 'application/json',
-              Accept: 'application/json',
+              "Content-Type": "application/json",
+              Accept: "application/json",
               Authorization: `Bearer ${tkn}`,
             },
           });
@@ -51,15 +67,12 @@ export const UserinfoPage = () => {
               Authorization: `Bearer ${tkn}`,
             },
           });
-          console.log(userInfoResp?.data)
           const user = userInfoResp?.data?.data;
           if (!user) {
             throw new Error("User not Found");
           }
-          setUser(user)
+          setUser(user);
         }
-      } catch (error) {
-        console.error("Error fetching data:", error);
       }
     }
     getUser();
@@ -69,7 +82,6 @@ export const UserinfoPage = () => {
     return null;
   }
 
-  console.log(user);
   return (
     <PageLayout>
       <div className="content-layout">
