@@ -1,56 +1,59 @@
 import React, { useEffect, useState } from "react";
-import { CodeSnippet } from "../components/code-snippet";
-import { PageLayout } from "../components/page-layout";
-import { getProtectedResource } from "../services/message.service";
+import axios from "axios";
+import { useAuth0 } from "@auth0/auth0-react";
+
+const domain = process.env.REACT_APP_LOGIN30_DOMAIN;
+  const clientId = process.env.REACT_APP_LOGIN30_CLIENT_ID;
+  const accountID= process.env.REACT_APP_ACCOUNT_ID;
+  const redirectUri = window.location.origin;
+
 
 export const ProtectedPage = () => {
-  const [message, setMessage] = useState("");
+  const { user, isAuthenticated, getAccessTokenSilently } = useAuth0();
+  const [data, setData] = useState(null);
+  const [error, setError] = useState(null);
+
+
+  const token = getAccessTokenSilently();
+  console.log(token);
 
   useEffect(() => {
-    let isMounted = true;
-
-    const getMessage = async () => {
-      const { data, error } = await getProtectedResource();
-
-      if (!isMounted) {
-        return;
-      }
-
-      if (data) {
-        setMessage(JSON.stringify(data, null, 2));
-      }
-
-      if (error) {
-        setMessage(JSON.stringify(error, null, 2));
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          `${domain}/.well-known/openid-configuration`,
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+              "x-account-id": accountID,
+            },
+          }
+        );
+        setData(response.data);
+      } catch (error) {
+        setError(error);
       }
     };
 
-    getMessage();
+    fetchData();
 
+    // Cleanup function to cancel the axios request
     return () => {
-      isMounted = false;
+      // Cancel the request if component is unmounted
     };
-  }, []);
+  }, []); // Empty dependency array means this effect runs only once, similar to componentDidMount
 
-  return (
-    <PageLayout>
-      <div className="content-layout">
-        <h1 id="page-title" className="content__title">
-          Protected Page
-        </h1>
-        <div className="content__body">
-          <p id="page-description">
-            <span>
-              This page retrieves a <strong>protected message</strong> from an
-              external API.
-            </span>
-            <span>
-              <strong>Only authenticated users can access this page.</strong>
-            </span>
-          </p>
-          <CodeSnippet title="Protected Message" code={message} />
-        </div>
+  if (error) {
+    return <div>エラーメッセージ: {error.message}</div>;
+  } else if (!data) {
+    return <div>ローディング...</div>;
+  } else {
+    return (
+      <div>
+        <h1>取得したデータ</h1>
+        <pre>{JSON.stringify(data, null, 2)}</pre>
       </div>
-    </PageLayout>
-  );
+    );
+  }
+
 };

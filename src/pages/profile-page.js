@@ -8,6 +8,7 @@ export const ProfilePage = () => {
 
   if (!user) {
     return null;
+    console.log(user, "user not found");
   }
 
   console.log(user);
@@ -42,6 +43,11 @@ export const ProfilePage = () => {
           </div>
         </div>
       </div>
+   <div>
+      
+    </div> 
+
+
     </PageLayout>
   );
 };

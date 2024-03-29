@@ -9,6 +9,8 @@ export const Auth0ProviderWithNavigate = ({ children }) => {
   const clientId = process.env.REACT_APP_LOGIN30_CLIENT_ID;
   const redirectUri = window.location.origin;
 
+  
+
   const onRedirectCallback = (appState) => {
     navigate(appState?.returnTo || window.location.pathname);
   };
