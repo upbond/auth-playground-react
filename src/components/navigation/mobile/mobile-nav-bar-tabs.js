@@ -24,6 +24,11 @@ export const MobileNavBarTabs = ({ handleClick }) => {
             label="Admin"
             handleClick={handleClick}
           />
+          <MobileNavBarTab
+            path="/userinfo"
+            label="ユーザー情報"
+            handleClick={handleClick}
+          />
         </>
       )}
     </div>

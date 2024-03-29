@@ -68,3 +68,8 @@
     margin-top: 1.6rem;
   }
 }
+
+.float-right {
+  float: right;
+  text-align: end;
+}
