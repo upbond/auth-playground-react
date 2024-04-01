@@ -14,7 +14,7 @@ export const UserinfoPage = () => {
   useEffect(() => {
     async function getUser() {
       const DOMAIN_AUTH =
-        process.env.REACT_APP_LOGIN30_DOMAIN ||
+        process.env.REACT_APP_LOGIN3_DOMAIN ||
         "https://auth-wallet.dev.upbond.io";
 
       let userinfo_url;
