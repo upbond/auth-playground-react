@@ -1,10 +1,11 @@
 .profile-grid {
   display: flex;
   flex-direction: column;
+  margin-bottom: 4rem;
 
   /* responsive */
 
-  margin-top: 48px;
+  /* margin-top: 48px; */
 }
 
 .profile__header {
@@ -40,6 +41,29 @@
   /* responsive */
 
   margin-top: 32px;
+}
+
+.profile-container-button {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.profile-save-button {
+  background-color: black;
+  width: 40%;
+  color: white;
+  padding: 1rem 4rem;
+  border-radius: 30px;
+}
+
+.profile-pic {
+  display: flex;
+  width: 300px;
+  height: 300px;
+  justify-content: center;
+  margin-bottom: 1rem;
+  padding: 1rem;
 }
 
 @media only screen and (max-width: 480px) {

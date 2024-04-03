@@ -42,7 +42,7 @@ export const UserinfoPage = () => {
               Authorization: `Bearer ${tkn}`,
             },
           });
-          const user = userInfoResp?.data?.data;
+          const user = userInfoResp?.data;
           if (!user) {
             throw new Error("User not Found");
           }
