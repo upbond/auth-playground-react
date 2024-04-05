@@ -1,16 +1,15 @@
 import React from "react";
 
 export const HeroBanner = () => {
-  const logo = "https://cdn.auth0.com/blog/developer-hub/react-logo.svg";
 
   return (
     <div className="hero-banner hero-banner--pink-yellow">
       <div className="hero-banner__logo">
-      <img class="mb-3 app-logo" src="https://da7udebijaype.cloudfront.net/uploads/startups/logos/c915d3a2-faa5-47c1-952c-45432b0ef32f.png?=1661886060" alt="upbondlogo" width="120" />
+      <img class="mb-3 app-logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfWPnTKe8LNIZqCT0_7MYhxJEeqd9LDODTgm7j73wACQ&s" alt="upbondlogo" width="200" />
       </div>
-      <h1 className="hero-banner__headline">UPBOND LOGIN3.0</h1>
+      <h1 className="hero-banner__headline">LOGIN3.0サンプル</h1>
       <p class="hero-banner__description">
-      UpbondのLogin 3.0 SDKを使用した認証フローを示すサンプルアプリケーションです。
+      Login 3.0 SDKを使用した認証フローを示すサンプルアプリケーションです。
     </p>
       <a
         id="code-sample-link"
