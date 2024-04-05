@@ -1,11 +1,10 @@
 .mobile-nav-bar__container {
   position: fixed;
   display: none;
-
   justify-content: center;
   flex-shrink: 0;
   width: 100%;
-
+  background-color: var(--dark-aluminium);
   box-shadow: rgb(90 95 102) 0-1.5px 0 inset;
 
   z-index: 300;
@@ -64,6 +63,7 @@
   margin-left: 2.4rem;
   font-size: 3.6rem;
   cursor: pointer;
+  color: var(--white);
 }
 
 .mobile-nav-bar__tabs {
@@ -85,7 +85,7 @@
   line-height: 16px;
 
   padding: 3.2rem 2.4rem;
-  background-color: #425BA8;
+  background-color: var(--black);
   color: var(--white);
   width: 100%;
   box-shadow: rgb(255, 255, 255) 0-1.5px 0 inset;
@@ -118,7 +118,7 @@
   display: flex;
   justify-content: center;
   padding: 3.2rem;
-  background-color: #425BA8;
+  background-color: var(--black);
 }
 
 @media only screen and (max-width: 640px) and (hover: none) {
