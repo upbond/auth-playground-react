@@ -62,9 +62,8 @@ export const UserinfoPage = () => {
             },
             // add extra params here
             data: {
-              age: '23',
+              age: 23,
               gender: 'male',
-              address: 'tokyo'
             }
           });
           // GET userinfo detail from user info API
