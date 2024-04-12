@@ -25,8 +25,7 @@ export const Auth0ProviderWithNavigate = ({ children }) => {
       clientId={clientId}
       authorizationParams={{
         redirect_uri: redirectUri,
-        scope: '',
-        flow: 'fastest'
+        scope: ''
       }}
       onRedirectCallback={onRedirectCallback}
     >
