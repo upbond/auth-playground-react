@@ -8,7 +8,7 @@ export const Auth0ProviderWithNavigate = ({ children }) => {
   const domain = process.env.REACT_APP_LOGIN3_DOMAIN;
   const clientId = process.env.REACT_APP_LOGIN3_CLIENT_ID;
   const redirectUri = window.location.origin;
-  const resource = process.env.REACT_APP_LOGIN3_RESOURCE_API || process.env.REACT_APP_LOGIN3_CLIENT_ID;  
+  const resource = process.env.REACT_APP_LOGIN3_RESOURCE_API || window.location.origin;
 
   const onRedirectCallback = (appState) => {
     navigate(appState?.returnTo || window.location.pathname);
@@ -28,6 +28,7 @@ export const Auth0ProviderWithNavigate = ({ children }) => {
         resource: resource
       }}
       onRedirectCallback={onRedirectCallback}
+      useRefreshTokens={true}
       useCookiesForTransactions={true}
     >
       {children}
